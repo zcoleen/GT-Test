@@ -43,7 +43,7 @@ calculateNPV()
                 + this.lowerBoundRate+'&upperBoundRate='
                 + this.upperBoundRate+'&incrementRate='
                 + this.incrementRate,
-                  this.cashFlows.split(','),{headers: headers,}).subscribe(response => {
+                  this.cashFlows.replace(/\s/g,"").split(','),{headers: headers,}).subscribe(response => {
                     this.NPVList = response;
                     this.rates = this.NPVList[0].presentValues.map(item=>item.rate);
                 });
