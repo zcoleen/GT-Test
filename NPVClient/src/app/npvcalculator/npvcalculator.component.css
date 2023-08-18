@@ -1,0 +1,20 @@
+  .npv-grid{
+    border: solid 1px black;
+    overflow: scroll;
+    white-space: nowrap;
+  }
+
+  td{
+    white-space: nowrap;
+  }
+
+  .form-group{
+    margin-bottom: 15px;
+  }
+
+  .container{
+    overflow: auto;
+  }
+  h2{
+    margin: 10px 0px;
+  }

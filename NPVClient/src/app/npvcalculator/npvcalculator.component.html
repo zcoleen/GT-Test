@@ -1,0 +1,49 @@
+
+<div class="container"><form>
+    <h2>Net Present Value Calculator</h2>
+    <div class="form-group">
+      <label for="lowerboundRate"> Lower Bound Discount Rate(%) :</label>
+      <input type="text" class="form-control" id="lowerBoundRate" [(ngModel)]="lowerBoundRate" [ngModelOptions]="{standalone: true}">
+      <small class="form-text text-muted">Start range of your discount percentage</small>
+    </div>
+    <div class="form-group">
+        <label for="uppe"> Upper Bound Discount Rate(%) :</label>
+        <input type="text" class="form-control" id="upperBoundRate" [(ngModel)]="upperBoundRate" [ngModelOptions]="{standalone: true}">
+        <small class="form-text text-muted">End range of your discount percentage</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"> Discount Increment Rate :</label>
+        <input type="text" class="form-control" id="incrementRate" [(ngModel)]="incrementRate" [ngModelOptions]="{standalone: true}">
+        <small class="form-text text-muted">Discount Increment Rate</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"> CashFlows :</label>
+        <input type="text" class="form-control" id="cashFlows" [(ngModel)]="cashFlows" [ngModelOptions]="{standalone: true}">
+        <small class="form-text text-muted">Put your Cash flows in comma separation</small>
+      </div>
+    <button 
+    (click)="calculateNPV()"
+    class="btn btn-primary">Calculate</button>
+</form>
+<hr>
+<div class="container">
+<table class="table table-striped npv-grid" >
+	<thead>
+		<tr >
+			<th scope="col">Period</th>
+			<th scope="col">Cash Flow</th>
+			<th scope="col" *ngFor="let rate of rates">{{rate}}%</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let item of NPVList">
+			<td>
+                {{item.period}}
+            </td>
+            <td>{{item.cashFlow}}</td>
+            <td *ngFor="let pv of item.presentValues">{{pv.value}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
