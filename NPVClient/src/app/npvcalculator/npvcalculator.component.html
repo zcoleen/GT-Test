@@ -19,7 +19,7 @@
       <div class="form-group">
         <label for="exampleInputEmail1"> CashFlows :</label>
         <input type="text" class="form-control" id="cashFlows" [(ngModel)]="cashFlows" [ngModelOptions]="{standalone: true}">
-        <small class="form-text text-muted">Put your Cash flows in comma separation</small>
+        <small class="form-text text-muted">Put your Cash flows in comma separation like : 1000,2000,3000,4000,5000</small>
       </div>
     <button 
     (click)="calculateNPV()"
